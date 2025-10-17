@@ -20,13 +20,11 @@ spring:
           lower-case-service-id: true
 
       routes:
-        # --- AUTENTICACIÓN ---
         - id: ms-auth
           uri: lb://ms-auth
           predicates:
             - Path=/auth/**
 
-        # --- USUARIOS Y ROLES ---
         - id: ms-usuario
           uri: lb://ms-usuario
           predicates:
@@ -34,7 +32,6 @@ spring:
           filters:
             - AuthFilter
 
-        # --- DOCUMENTOS ---
         - id: ms-documento
           uri: lb://ms-documento
           predicates:
@@ -42,7 +39,6 @@ spring:
           filters:
             - AuthFilter
 
-        # --- TRÁMITES ---
         - id: ms-tramite
           uri: lb://ms-tramite
           predicates:
@@ -50,7 +46,6 @@ spring:
           filters:
             - AuthFilter
 
-        # --- NOTIFICACIONES ---
         - id: ms-notificacion
           uri: lb://ms-notificacion
           predicates:
@@ -58,7 +53,6 @@ spring:
           filters:
             - AuthFilter
 
-        # --- ALMACENAMIENTO DE ARCHIVOS ---
         - id: ms-storage
           uri: lb://ms-storage
           predicates:
