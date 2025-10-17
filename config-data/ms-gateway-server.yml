@@ -1,0 +1,77 @@
+server:
+  port: 9090
+
+eureka:
+  client:
+    service-url:
+      defaultZone: ${EUREKA_URI:http://localhost:8090/eureka}
+  instance:
+    instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
+
+spring:
+  application:
+    name: ms-gateway-server
+
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+          lower-case-service-id: true
+
+      routes:
+        # --- AUTENTICACIÓN ---
+        - id: ms-auth
+          uri: lb://ms-auth
+          predicates:
+            - Path=/auth/**
+
+        # --- USUARIOS Y ROLES ---
+        - id: ms-usuario
+          uri: lb://ms-usuario
+          predicates:
+            - Path=/api/usuarios/**
+          filters:
+            - AuthFilter
+
+        # --- DOCUMENTOS ---
+        - id: ms-documento
+          uri: lb://ms-documento
+          predicates:
+            - Path=/api/documentos/**
+          filters:
+            - AuthFilter
+
+        # --- TRÁMITES ---
+        - id: ms-tramite
+          uri: lb://ms-tramite
+          predicates:
+            - Path=/api/tramites/**
+          filters:
+            - AuthFilter
+
+        # --- NOTIFICACIONES ---
+        - id: ms-notificacion
+          uri: lb://ms-notificacion
+          predicates:
+            - Path=/api/notificaciones/**
+          filters:
+            - AuthFilter
+
+        # --- ALMACENAMIENTO DE ARCHIVOS ---
+        - id: ms-storage
+          uri: lb://ms-storage
+          predicates:
+            - Path=/api/storage/**
+          filters:
+            - AuthFilter
+
+        - id: ms-auditoria
+          uri: lb://ms-auditoria
+          predicates:
+            - Path=/api/auditoria/**
+          filters:
+            - AuthFilter
+
+
+
