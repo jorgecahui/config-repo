@@ -21,3 +21,4 @@ eureka:
 
 jwt:
   secret: mySuperSecretKeyForJwtGeneration_2025_ChangeThisNow!
+  expiration: 3600000
