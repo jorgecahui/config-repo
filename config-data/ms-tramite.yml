@@ -8,13 +8,23 @@ spring:
   datasource:
     url: jdbc:postgresql://localhost:5432/ms_tramite
     username: postgres
-    password: 12345
+    password: 123456
     driver-class-name: org.postgresql.Driver
 
   jpa:
     hibernate:
       ddl-auto: update
     show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        jdbc:
+          lob:
+            non_contextual_creation: true
+
+  sql:
+    init:
+      platform: postgresql          
 
 springdoc:
   api-docs:
