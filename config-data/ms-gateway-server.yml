@@ -29,7 +29,7 @@ spring:
           uri: lb://ms-usuario
           predicates:
             - Path=/usuarios/**
-          
+
 
         - id: ms-documento
           uri: lb://ms-documento
