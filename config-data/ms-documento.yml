@@ -8,7 +8,7 @@ spring:
   datasource:
     url: jdbc:postgresql://localhost:5432/ms_documento
     username: postgres
-    password: 12345
+    password: 123456
     driver-class-name: org.postgresql.Driver
 
   jpa:
@@ -24,7 +24,7 @@ spring:
 
   sql:
     init:
-      platform: postgresql          
+      platform: postgresql
 
 springdoc:
   api-docs:
