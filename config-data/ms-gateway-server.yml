@@ -29,8 +29,7 @@ spring:
           uri: lb://ms-usuario
           predicates:
             - Path=/usuarios/**
-          filters:
-            - AuthFilter
+          
 
         - id: ms-documento
           uri: lb://ms-documento
