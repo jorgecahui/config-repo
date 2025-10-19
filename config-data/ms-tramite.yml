@@ -40,3 +40,6 @@ eureka:
   instance:
     instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
 
+ms:
+  documento:
+    url: http://localhost:9090/documentos
