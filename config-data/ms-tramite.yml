@@ -39,11 +39,3 @@ eureka:
       defaultZone: ${EUREKA_URI:http://localhost:8090/eureka}
   instance:
     instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
-
-ms:
-  documento:
-    url: http://localhost:9090/documentos
-
-jwt:
-  secret: mySuperSecretKeyForJwtGeneration_2025_ChangeThisNow!
-  expiration: 3600000
