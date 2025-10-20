@@ -40,3 +40,6 @@ eureka:
   instance:
     instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
 
+jwt:
+  secret: mySuperSecretKeyForJwtGeneration_2025_ChangeThisNow!
+  expiration: 3600000
