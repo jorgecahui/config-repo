@@ -1,0 +1,17 @@
+server:
+  port: 8085
+
+spring:
+  application:
+    name: ms-notificacion
+
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/ms_notificacion
+
+springdoc:
+  api-docs:
+    enabled: true
+  swagger-ui:
+    enabled: true
+    path: /doc/swagger-ui.html
