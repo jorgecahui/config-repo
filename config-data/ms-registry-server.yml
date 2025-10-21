@@ -1,5 +1,10 @@
 server:
   port: 8090
+
+spring:
+  application:
+    name: ms-registry-server
+
 eureka:
   instance:
     hostname: localhost
@@ -7,4 +12,4 @@ eureka:
     registerWithEureka: false
     fetchRegistry: false
     serviceUrl:
-      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+      defaultZone: http://localhost:8090/eureka/
