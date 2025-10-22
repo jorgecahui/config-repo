@@ -1,10 +1,6 @@
 server:
   port: 8761
 
-spring:
-  application:
-    name: ms-registry-server
-
 eureka:
   client:
     register-with-eureka: false
