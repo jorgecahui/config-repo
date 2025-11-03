@@ -5,9 +5,11 @@ spring:
   application:
     name: ms-documento
 
-  data:
-    mongodb:
-      uri: mongodb://localhost:27017/ms_documento
+  spring:
+    data:
+      mongodb:
+        uri: mongodb://localhost:27017/ms_documento?connectTimeoutMS=10000&socketTimeoutMS=30000&serverSelectionTimeoutMS=30000
+
 
 springdoc:
   api-docs:
