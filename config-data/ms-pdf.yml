@@ -14,12 +14,8 @@ spring:
   jpa:
     hibernate:
       ddl-auto: update
-    properties:
-      hibernate:
-        jdbc:
-          lob:
-            non_contextual_creation: true
-    show-sql: false
+    show-sql: true
+
   servlet:
     multipart:
       max-file-size: 20MB
