@@ -49,3 +49,8 @@ spring:
           uri: lb://ms-auth
           predicates:
             - Path=/api/auth/**
+        - id: ms-pdf
+          uri: lb://ms-auth
+          predicates:
+            - Path=/api/ocr/**
+
