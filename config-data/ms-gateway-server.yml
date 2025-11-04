@@ -50,7 +50,7 @@ spring:
           predicates:
             - Path=/api/auth/**
         - id: ms-pdf
-          uri: lb://ms-auth
+          uri: lb://docs
           predicates:
             - Path=/api/ocr/**
 
