@@ -58,7 +58,8 @@ spring:
           predicates:
             - Path=/categoria/**
 
-      globalcors:
+      globals:
+        add-to-simple-url-handler-mapping: true 
         corsConfigurations:
           '[/**]':
             allowedOrigins:
