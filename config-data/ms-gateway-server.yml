@@ -53,6 +53,10 @@ spring:
           uri: lb://ms-pdf
           predicates:
             - Path=/api/ocr/**
+        - id: ms-catalogo
+          uri: lb://ms-catalogo
+          predicates:
+            - Path=/categoria/**
 
       globalcors:
         corsConfigurations:
